@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import io, base64
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
+from tensorflow.keras.layers import LSTM, Dense ,Input
 from sklearn.preprocessing import MinMaxScaler
 
 def fetch_stock_data(ticker):
@@ -70,7 +70,7 @@ def plot_predictions(df, actual, predicted, future_prices):
     img.seek(0)
     return base64.b64encode(img.getvalue()).decode()
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/')
 def index():
