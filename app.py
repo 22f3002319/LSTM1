@@ -90,5 +90,5 @@ def predict():
     plot_url = plot_predictions(df, actual_prices, predictions, future_prices)
     return jsonify({'plot_url': plot_url})
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(debug=True)
